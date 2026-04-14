@@ -1,0 +1,69 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "icon": {
+        "id": "rocket",
+        "tooltip": "构建（macOS/darwin）"
+      },
+      "command": "make",
+      "args": ["darwin"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$go"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "release",
+      "type": "shell",
+      "icon": {
+        "id": "gift",
+        "tooltip": "打包发布（Linux/macOS/Windows）"
+      },
+      "command": "make",
+      "args": ["release"],
+      "problemMatcher": ["$go"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "lint",
+      "type": "shell",
+      "icon": {
+        "id": "shield",
+        "tooltip": "格式化 + 静态检查 + golangci-lint"
+      },
+      "command": "make",
+      "args": ["lint"],
+      "problemMatcher": ["$go"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "unittest(一次)",
+      "type": "shell",
+      "icon": {
+        "id": "beaker",
+        "tooltip": "单次运行 go test（不进入 watch）"
+      },
+      "command": "go",
+      "args": ["test", "-trimpath", "./..."],
+      "problemMatcher": ["$go"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    }
+  ]
+}
